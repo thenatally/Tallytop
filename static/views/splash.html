@@ -18,6 +18,7 @@
             border-radius: 8px;
             border: 1px solid var(--fg-semi-trans);
             background: var(--bg);
+            position: relative;
         }
 
         p {
@@ -25,21 +26,79 @@
         }
 
         img {
-            width: 128px;
-            height: 128px;
+            max-width: 256px;
+            max-height: 164px;
+            height: auto;
+            width: auto;
             image-rendering: pixelated;
+            border-radius: 1em;
+        }
+
+        #quote {
+            font-size: 0.8rem;
+            position: absolute;
+            bottom: 0.5em;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 2em);
+            color: var(--fg-semi-trans);
         }
     </style>
 </head>
 
 <body>
     <div class="wrapper">
-        <img
-            draggable="false"
-            src="../shiggy.gif"
-            alt="shiggy"
-            role="presentation"
-        />
-        <p>Loading Vesktop...</p>
+        <img draggable="false" src="" alt="" role="presentation" />
+        <p>Loading Tallytop...</p>
+        <p id="quote"></p>
     </div>
 </body>
+<script>
+    const images = [
+        "shiggy.gif",
+        "cat-hire.gif",
+        "deredere-hearts.gif",
+        "glungus-cat.gif",
+        "i-may-be-dumb-dumb-moment.gif",
+        "menhera-roll.gif",
+        "menhera-sip.gif",
+        "menhera-spin.gif",
+        "menhera-table.gif",
+        "pet-glungus.gif",
+        "spagari.gif"
+    ];
+    const randomImage = images[Math.floor(Math.random() * images.length)];
+    document.querySelector("img").src = `../${randomImage}`;
+
+    const quotes = [
+        "Never stop doing j.",
+        "erfel;l';;',waerf f;'wr qf",
+        "mmjmmmjnmjn mjn mkjnm,mnbnmjnmjnjnjnmjmjh",
+        "aDo not nelon that",
+        "waltermelon",
+        "me comare tus faldas",
+        "die tally macht miau",
+        "christmas withuot hrt is cismas",
+        "NEGLIGENT HOMICIDE WITH A MOTOR VEHICLE",
+        "i will drive my furry ass to Australia",
+        "not a number is a number",
+        "do your eyes not support jpg export?",
+        "THE GOVERNMENT IS TRYING TO FEMINIZE US WITH THE VACCINE!!!",
+        "New Jersey is the best state ever! I want to live there and it's so cool. I will never, ever, ever, ever, ever, ever say otherwise. I love NJ with all my heart ❤️",
+        "why does my chat bar have so many children",
+        "watch .3. y-y-yo tonye :3 mf",
+        "mewmrrpurrrrow mewmraowmewmraowmrow meomewmraowmew meomraowmew mraowmraowmew nyamrrpurrmew raowpurr mrowmraow mewmraowmewmrrpurr raowmewmrow",
+        "if pansexual was a box i would eat it because i eat boxes",
+        "hold on let me find my arm i think i left it somewhere",
+        "ill eat your cpu cores",
+        "i am a murderous housewife",
+        "d--==-';",
+        "youre a calibri knockoff",
+        "shut up before i open a nature vally bar on your bed",
+        "mrow nya nya amroe mrrp mrw mew mew meep :333!!!!",
+        "prrr uwu nya mrow meow mew :3 nya uwu",
+        "i just watched marge Simpson bowl her newborn into the pins"
+    ];
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    document.getElementById("quote").textContent = randomQuote;
+</script>
