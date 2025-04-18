@@ -482,7 +482,7 @@ function createMainWindow() {
     return win;
 }
 
-const runVencordMain = once(() => require(join(TALLYCORD_FILES_DIR, "tallycordDesktopMain.js")));
+const runTallytopMain = once(() => require(join(TALLYCORD_FILES_DIR, "tallycordDesktopMain.js")));
 
 export function loadUrl(uri: string | undefined) {
     const branch = Settings.store.discordBranch;
@@ -502,7 +502,8 @@ export async function createWindows() {
     }
 
     await ensureVencordFiles();
-    runVencordMain();
+    console.log("Running Tallytop Main");
+    runTallytopMain();
 
     mainWin = createMainWindow();
 

@@ -15,22 +15,59 @@ let server: any;
 const inviteCodeRegex = /^(\w|-)+$/;
 
 export async function initArRPC() {
-    if (server || !Settings.store.arRPC) return;
+    if (server) {
+        console.log("[arRPC] Server already initialized, skipping init.");
+        return;
+    }
+
+    if (!Settings.store.arRPC) {
+        console.log("[arRPC] Disabled in settings, not starting.");
+        return;
+    }
 
     try {
+        console.log("[arRPC] Starting arRPC server...");
         server = await new Server();
-        server.on("activity", (data: any) => sendRendererCommand(IpcCommands.RPC_ACTIVITY, JSON.stringify(data)));
+        console.log("[arRPC] arRPC server started successfully!");
+
+        server.on("activity", (data: any) => {
+            console.log("[arRPC] Received activity data:", data);
+            sendRendererCommand(IpcCommands.RPC_ACTIVITY, JSON.stringify(data));
+        });
+
         server.on("invite", async (invite: string, callback: (valid: boolean) => void) => {
             invite = String(invite);
-            if (!inviteCodeRegex.test(invite)) return callback(false);
+            console.log("[arRPC] Received invite:", invite);
+            if (!inviteCodeRegex.test(invite)) {
+                console.warn("[arRPC] Invalid invite code format.");
+                return callback(false);
+            }
 
-            await sendRendererCommand(IpcCommands.RPC_INVITE, invite).then(callback);
+            try {
+                await sendRendererCommand(IpcCommands.RPC_INVITE, invite).then(result => {
+                    console.log("[arRPC] Invite sent to renderer, result:", result);
+                    callback(result);
+                });
+            } catch (err) {
+                console.error("[arRPC] Failed to handle invite:", err);
+                callback(false);
+            }
         });
+
         server.on("link", async (data: any, deepCallback: (valid: boolean) => void) => {
-            await sendRendererCommand(IpcCommands.RPC_DEEP_LINK, data).then(deepCallback);
+            console.log("[arRPC] Received deep link data:", data);
+            try {
+                await sendRendererCommand(IpcCommands.RPC_DEEP_LINK, data).then(result => {
+                    console.log("[arRPC] Deep link sent to renderer, result:", result);
+                    deepCallback(result);
+                });
+            } catch (err) {
+                console.error("[arRPC] Failed to handle deep link:", err);
+                deepCallback(false);
+            }
         });
     } catch (e) {
-        console.error("Failed to start arRPC server", e);
+        console.error("[arRPC] Failed to start arRPC server:", e);
     }
 }
 
