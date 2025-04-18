@@ -34,7 +34,7 @@ import {
     MessageBoxChoice,
     MIN_HEIGHT,
     MIN_WIDTH,
-    VENCORD_FILES_DIR
+    TALLYCORD_FILES_DIR
 } from "./constants";
 import { darwinURL } from "./index";
 import { sendRendererCommand } from "./ipcCommands";
@@ -42,7 +42,7 @@ import { Settings, State, VencordSettings } from "./settings";
 import { createSplashWindow } from "./splash";
 import { makeLinksOpenExternally } from "./utils/makeLinksOpenExternally";
 import { applyDeckKeyboardFix, askToApplySteamLayout, isDeckGameMode } from "./utils/steamOS";
-import { downloadVencordFiles, ensureVencordFiles } from "./utils/vencordLoader";
+import { downloadVencordFiles, ensureVencordFiles } from "./utils/tallycordLoader";
 
 let isQuitting = false;
 let tray: Tray;
@@ -482,7 +482,7 @@ function createMainWindow() {
     return win;
 }
 
-const runVencordMain = once(() => require(join(VENCORD_FILES_DIR, "vencordDesktopMain.js")));
+const runVencordMain = once(() => require(join(TALLYCORD_FILES_DIR, "tallycordDesktopMain.js")));
 
 export function loadUrl(uri: string | undefined) {
     const branch = Settings.store.discordBranch;

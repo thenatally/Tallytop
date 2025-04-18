@@ -63,7 +63,7 @@
         "pnpm": ">=8"
     },
     "build": {
-        "appId": "dev.vencord.tallytop",
+        "appId": "dev.tallycord.tallytop",
         "productName": "Tallytop",
         "files": [
             "!*",

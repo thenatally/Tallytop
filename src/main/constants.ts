@@ -47,9 +47,9 @@ export const VENCORD_THEMES_DIR = join(DATA_DIR, "themes");
 
 // needs to be inline require because of circular dependency
 // as otherwise "DATA_DIR" (which is used by ./settings) will be uninitialised
-export const VENCORD_FILES_DIR =
+export const TALLYCORD_FILES_DIR =
     (require("./settings") as typeof import("./settings")).State.store.vencordDir ||
-    join(SESSION_DATA_DIR, "vencordFiles");
+    join(SESSION_DATA_DIR, "tallycordFiles");
 
 export const USER_AGENT = `Tallytop/${app.getVersion()} (https://github.com/Vencord/Tallytop)`;
 

@@ -8,16 +8,16 @@ import { mkdirSync } from "fs";
 import { access, constants as FsConstants, writeFile } from "fs/promises";
 import { join } from "path";
 
-import { USER_AGENT, VENCORD_FILES_DIR } from "../constants";
+import { TALLYCORD_FILES_DIR, USER_AGENT } from "../constants";
 import { downloadFile, fetchie } from "./http";
 
 const API_BASE = "https://api.github.com";
 
 export const FILES_TO_DOWNLOAD = [
-    "vencordDesktopMain.js",
-    "vencordDesktopPreload.js",
-    "vencordDesktopRenderer.js",
-    "vencordDesktopRenderer.css"
+    "tallycordDesktopMain.js",
+    "tallycordDesktopPreload.js",
+    "tallycordDesktopRenderer.js",
+    "tallycordDesktopRenderer.css"
 ];
 
 export interface ReleaseData {
@@ -44,7 +44,7 @@ export async function githubGet(endpoint: string) {
 }
 
 export async function downloadVencordFiles() {
-    const release = await githubGet("/repos/Vendicated/Vencord/releases/latest");
+    const release = await githubGet("/repos/Tally-gay/Tallycord/releases/latest");
 
     const { assets }: ReleaseData = await release.json();
 
@@ -52,7 +52,7 @@ export async function downloadVencordFiles() {
         assets
             .filter(({ name }) => FILES_TO_DOWNLOAD.some(f => name.startsWith(f)))
             .map(({ name, browser_download_url }) =>
-                downloadFile(browser_download_url, join(VENCORD_FILES_DIR, name), {}, { retryOnNetworkError: true })
+                downloadFile(browser_download_url, join(TALLYCORD_FILES_DIR, name), {}, { retryOnNetworkError: true })
             )
     );
 }
@@ -68,9 +68,9 @@ export async function isValidVencordInstall(dir: string) {
 }
 
 export async function ensureVencordFiles() {
-    if (await isValidVencordInstall(VENCORD_FILES_DIR)) return;
+    if (await isValidVencordInstall(TALLYCORD_FILES_DIR)) return;
 
-    mkdirSync(VENCORD_FILES_DIR, { recursive: true });
+    mkdirSync(TALLYCORD_FILES_DIR, { recursive: true });
 
-    await Promise.all([downloadVencordFiles(), writeFile(join(VENCORD_FILES_DIR, "package.json"), "{}")]);
+    await Promise.all([downloadVencordFiles(), writeFile(join(TALLYCORD_FILES_DIR, "package.json"), "{}")]);
 }

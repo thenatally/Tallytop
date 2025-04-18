@@ -88,7 +88,7 @@ function init() {
     });
 
     app.whenReady().then(async () => {
-        if (process.platform === "win32") app.setAppUserModelId("dev.vencord.tallytop");
+        if (process.platform === "win32") app.setAppUserModelId("dev.tally.tallytop");
 
         registerScreenShareHandler();
         registerMediaPermissionsHandler();
