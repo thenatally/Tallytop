@@ -18,7 +18,7 @@ export function addPatch<P extends PatchData>(p: P) {
 
     for (const patch of patches) {
         // TODO: Update types
-        Vencord.Plugins.addPatch(patch, "Tallytop", "TallytopPatchGlobals");
+        Tallycord.Plugins.addPatch(patch, "Tallytop", "TallytopPatchGlobals");
     }
 
     Object.assign(TallytopPatchGlobals, globals);

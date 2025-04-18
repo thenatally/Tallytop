@@ -10,6 +10,10 @@ declare global {
     export var TallytopPatchGlobals: any;
 
     export var IS_DEV: boolean;
+    var Tallycord: typeof Vencord;
+    interface Window {
+        Tallycord: typeof Vencord;
+    }
 }
 
 export {};

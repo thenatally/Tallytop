@@ -15,7 +15,7 @@ import { Settings } from "./settings";
 const logger = new Logger("TallytopRPC", "#5865f2");
 const StreamerModeStore = findStoreLazy("StreamerModeStore");
 
-const arRPC = Vencord.Plugins.plugins["WebRichPresence (arRPC)"] as any as {
+const arRPC = Tallycord.Plugins.plugins["WebRichPresence (arRPC)"] as any as {
     handleEvent(e: MessageEvent): void;
 };
 
