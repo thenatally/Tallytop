@@ -36,7 +36,7 @@ function loadSettings<T extends object = any>(file: string, name: string) {
 
 export const Settings = loadSettings<TSettings>(SETTINGS_FILE, "Tallytop settings");
 
-export const VencordSettings = loadSettings<any>(VENCORD_SETTINGS_FILE, "Vencord settings");
+export const VencordSettings = loadSettings<any>(VENCORD_SETTINGS_FILE, "Tallytop settings");
 
 if (Object.hasOwn(Settings.plain, "firstLaunch") && !existsSync(STATE_FILE)) {
     console.warn("legacy state in settings.json detected. migrating to state.json");
