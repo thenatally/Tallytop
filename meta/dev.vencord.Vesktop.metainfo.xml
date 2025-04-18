@@ -1,35 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component type="desktop-application">
-  <!--Created with jdAppStreamEdit 7.1-->
-  <id>dev.vencord.Vesktop</id>
-  <name>Vesktop</name>
+  <!--Created
+  with jdAppStreamEdit 7.1-->
+  <id>dev.vencord.Tallytop</id>
+  <name>Tallytop</name>
   <summary>Snappier Discord app with Vencord</summary>
   <developer_name>Vencord Contributors</developer_name>
-  <launchable type="desktop-id">dev.vencord.Vesktop.desktop</launchable>
+  <launchable type="desktop-id">dev.vencord.Tallytop.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0</project_license>
   <project_group>Vencord</project_group>
   <description>
-    <p>Vesktop is a cross platform desktop app aiming to give you a snappier Discord experience with Vencord pre-installed.</p>
-    <p>Vesktop comes bundled with Venmic, a purpose-built library to provide functioning audio screenshare.</p>
+    <p>Tallytop is a cross platform desktop app aiming to give you a snappier Discord experience
+      with Vencord pre-installed.</p>
+    <p>Tallytop comes bundled with Venmic, a purpose-built library to provide functioning audio
+      screenshare.</p>
   </description>
   <screenshots>
     <screenshot type="default">
       <caption>Vencord settings page and about window open</caption>
-      <image type="source">https://vencord.dev/assets/screenshots/vesktop-1-appstream.png</image>
+      <image type="source">https://vencord.dev/assets/screenshots/tallytop-1-appstream.png</image>
     </screenshot>
     <screenshot>
       <caption>A dialog showing screenshare options</caption>
-      <image type="source">https://vencord.dev/assets/screenshots/vesktop-2-appstream.png</image>
+      <image type="source">https://vencord.dev/assets/screenshots/tallytop-2-appstream.png</image>
     </screenshot>
     <screenshot>
       <caption>A screenshot of a Discord server</caption>
-      <image type="source">https://vencord.dev/assets/screenshots/vesktop-3-appstream.png</image>
+      <image type="source">https://vencord.dev/assets/screenshots/tallytop-3-appstream.png</image>
     </screenshot>
   </screenshots>
   <releases>
     <release version="1.5.6" date="2025-04-13" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v1.5.6</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v1.5.6</url>
       <description>
         <p>What's Changed</p>
         <ul>
@@ -43,14 +46,15 @@
       </description>
     </release>
     <release version="1.5.5" date="2025-02-06" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v1.5.5</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v1.5.5</url>
       <description>
         <p>What's Changed</p>
         <ul>
           <li>Now remembers your previous Screenshare resolution &amp; FPS</li>
-          <li>You can now disable the splash screen in Vesktop Settings</li>
-          <li>Now supports deep links (opening Discord Message Links in Vesktop) by @Covkie</li>
-          <li>Now supports discord:// uri scheme, allowing it to open things like invites from your Browser even while closed by @Covkie</li>
+          <li>You can now disable the splash screen in Tallytop Settings</li>
+          <li>Now supports deep links (opening Discord Message Links in Tallytop) by @Covkie</li>
+          <li>Now supports discord:// uri scheme, allowing it to open things like invites from your
+            Browser even while closed by @Covkie</li>
           <li>Added 4k resolution to screenshare by @makindotcc</li>
           <li>Fixed some performance issues caused by a recent Discord update</li>
           <li>Updated Electron to v34 &amp; chromium to v132, bringing new features and fixes</li>
@@ -58,7 +62,7 @@
       </description>
     </release>
     <release version="1.5.4" date="2024-12-05" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v1.5.4</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v1.5.4</url>
       <description>
         <p>What's Changed</p>
         <ul>
@@ -71,7 +75,7 @@
       </description>
     </release>
     <release version="1.5.3" date="2024-07-04" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v1.5.3</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v1.5.3</url>
       <description>
         <p>Features</p>
         <ul>
@@ -99,7 +103,7 @@
       </description>
     </release>
     <release version="1.5.2" date="2024-05-01" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v1.5.2</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v1.5.2</url>
       <description>
         <p>What's Changed</p>
         <ul>
@@ -113,16 +117,16 @@
       </description>
     </release>
     <release version="1.5.1" date="2024-03-12" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v1.5.1</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v1.5.1</url>
       <description>
         <p>New Features</p>
         <ul>
-          <li>Added categories to Vesktop settings to reduce visual clutter by @justin13888</li>
+          <li>Added categories to Tallytop settings to reduce visual clutter by @justin13888</li>
           <li>Added support for Vencord's transparent window options</li>
         </ul>
         <p>Fixes</p>
         <ul>
-          <li>Fixed ugly error popups when starting Vesktop without working internet connection</li>
+          <li>Fixed ugly error popups when starting Tallytop without working internet connection</li>
           <li>Fixed popout title bars on Windows</li>
           <li>Fixed spellcheck entries</li>
           <li>Fixed screenshare audio using microphone on debian, by @Curve</li>
@@ -131,11 +135,12 @@
       </description>
     </release>
     <release version="1.5.0" date="2024-01-16" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v1.5.0</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v1.5.0</url>
       <description>
         <p>What's Changed</p>
         <ul>
-          <li>fully renamed to Vesktop. You will likely have to login to Discord again. You might have to re-create your vesktop shortcut</li>
+          <li>fully renamed to Tallytop. You will likely have to login to Discord again. You might
+            have to re-create your tallytop shortcut</li>
           <li>added option to disable smooth scrolling by @ZirixCZ</li>
           <li>added setting to disable hardware acceleration by @zt64</li>
           <li>fixed adding connections</li>
@@ -147,7 +152,7 @@
       </description>
     </release>
     <release version="0.4.4" date="2023-12-02" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.4.4</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.4.4</url>
       <description>
         <p>What's Changed</p>
         <ul>
@@ -160,96 +165,96 @@
       </description>
     </release>
     <release version="0.4.3" date="2023-11-01" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.4.3</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.4.3</url>
     </release>
     <release version="0.4.2" date="2023-10-26" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.4.2</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.4.2</url>
     </release>
     <release version="0.4.1" date="2023-10-24" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.4.1</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.4.1</url>
     </release>
     <release version="0.4.0" date="2023-10-21" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.4.0</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.4.0</url>
     </release>
     <release version="0.3.3" date="2023-09-30" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.3.3</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.3.3</url>
     </release>
     <release version="0.3.2" date="2023-09-25" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.3.2</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.3.2</url>
     </release>
     <release version="0.3.1" date="2023-09-25" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.3.1</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.3.1</url>
     </release>
     <release version="0.3.0" date="2023-08-16" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.3.0</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.3.0</url>
     </release>
     <release version="0.2.9" date="2023-08-12" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.2.9</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.2.9</url>
     </release>
     <release version="0.2.8" date="2023-08-02" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.2.8</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.2.8</url>
     </release>
     <release version="0.2.7" date="2023-07-26" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.2.7</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.2.7</url>
     </release>
     <release version="0.2.6" date="2023-07-04" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.2.6</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.2.6</url>
     </release>
     <release version="0.2.5" date="2023-06-26" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.2.5</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.2.5</url>
     </release>
     <release version="0.2.4" date="2023-06-25" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.2.4</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.2.4</url>
     </release>
     <release version="0.2.3" date="2023-06-23" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.2.3</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.2.3</url>
     </release>
     <release version="0.2.2" date="2023-06-21" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.2.2</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.2.2</url>
     </release>
     <release version="0.2.1" date="2023-06-21" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.2.1</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.2.1</url>
     </release>
     <release version="0.2.0" date="2023-05-03" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.2.0</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.2.0</url>
     </release>
     <release version="0.1.9" date="2023-04-27" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.1.9</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.1.9</url>
     </release>
     <release version="0.1.8" date="2023-04-15" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.1.8</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.1.8</url>
     </release>
     <release version="0.1.7" date="2023-04-15" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.1.7</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.1.7</url>
     </release>
     <release version="0.1.6" date="2023-04-11" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.1.6</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.1.6</url>
     </release>
     <release version="0.1.5" date="2023-04-10" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.1.5</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.1.5</url>
     </release>
     <release version="0.1.4" date="2023-04-09" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.1.4</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.1.4</url>
     </release>
     <release version="0.1.3" date="2023-04-06" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.1.3</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.1.3</url>
     </release>
     <release version="0.1.2" date="2023-04-05" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.1.2</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.1.2</url>
     </release>
     <release version="0.1.1" date="2023-04-04" type="stable">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.1.1</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.1.1</url>
     </release>
     <release version="0.1.0" date="2023-04-04" type="development">
-      <url>https://github.com/Vencord/Vesktop/releases/tag/v0.1.0</url>
+      <url>https://github.com/Vencord/Tallytop/releases/tag/v0.1.0</url>
     </release>
   </releases>
   <url type="homepage">https://vencord.dev/</url>
-  <url type="bugtracker">https://github.com/Vencord/Vesktop/issues</url>
+  <url type="bugtracker">https://github.com/Vencord/Tallytop/issues</url>
   <url type="faq">https://vencord.dev/faq/</url>
-  <url type="help">https://github.com/Vencord/Vesktop/issues</url>
+  <url type="help">https://github.com/Vencord/Tallytop/issues</url>
   <url type="donation">https://github.com/sponsors/Vendicated</url>
-  <url type="vcs-browser">https://github.com/Vencord/Vesktop</url>
+  <url type="vcs-browser">https://github.com/Vencord/Tallytop</url>
   <categories>
     <category>InstantMessaging</category>
     <category>Network</category>
@@ -274,7 +279,7 @@
   <keywords>
     <keyword>Discord</keyword>
     <keyword>Vencord</keyword>
-    <keyword>Vesktop</keyword>
+    <keyword>Tallytop</keyword>
     <keyword>Privacy</keyword>
     <keyword>Mod</keyword>
   </keywords>

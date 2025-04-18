@@ -1,5 +1,5 @@
 /*
- * Vesktop, a desktop app aiming to give you a snappier Discord Experience
+ * Tallytop, a desktop app aiming to give you a snappier Discord Experience
  * Copyright (c) 2023 Vendicated and Vencord contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -14,20 +14,20 @@ import "./arrpc";
 export * as Components from "./components";
 
 import SettingsUi from "./components/settings/Settings";
-import { VesktopLogger } from "./logger";
+import { TallytopLogger } from "./logger";
 import { Settings } from "./settings";
 export { Settings };
 
 import type SettingsPlugin from "@vencord/types/plugins/_core/settings";
 
-VesktopLogger.log("read if cute :3");
-VesktopLogger.log("Vesktop v" + VesktopNative.app.getVersion());
+TallytopLogger.log("read if cute :3");
+TallytopLogger.log("Tallytop v" + TallytopNative.app.getVersion());
 
 const customSettingsSections = (Vencord.Plugins.plugins.Settings as any as typeof SettingsPlugin).customSections;
 
 customSettingsSections.push(() => ({
-    section: "Vesktop",
-    label: "Vesktop Settings",
+    section: "Tallytop",
+    label: "Tallytop Settings",
     element: SettingsUi,
-    className: "vc-vesktop-settings"
+    className: "vc-tallytop-settings"
 }));

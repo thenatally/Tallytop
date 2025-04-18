@@ -1,5 +1,5 @@
 /*
- * Vesktop, a desktop app aiming to give you a snappier Discord Experience
+ * Tallytop, a desktop app aiming to give you a snappier Discord Experience
  * Copyright (c) 2023 Vendicated and Vencord contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -22,7 +22,7 @@ import {
 import { Node } from "@vencord/venmic";
 import type { Dispatch, SetStateAction } from "react";
 import { addPatch } from "renderer/patches/shared";
-import { State, useSettings, useVesktopState } from "renderer/settings";
+import { State, useSettings, useTallytopState } from "renderer/settings";
 import { classNameFactory, isLinux, isWindows } from "renderer/utils";
 
 const StreamResolutions = ["480", "720", "1080", "1440", "2160"] as const;
@@ -64,7 +64,7 @@ interface Source {
 
 export let currentSettings: StreamSettings | null = null;
 
-const logger = new Logger("VesktopScreenShare");
+const logger = new Logger("TallytopScreenShare");
 
 addPatch({
     patches: [
@@ -115,7 +115,7 @@ if (isLinux) {
                 return;
             }
 
-            VesktopNative.virtmic.stop();
+            TallytopNative.virtmic.stop();
         });
     });
 }
@@ -133,11 +133,11 @@ export function openScreenSharePicker(screens: Source[], skipPicker: boolean) {
 
                         if (v.includeSources && v.includeSources !== "None") {
                             if (v.includeSources === "Entire System") {
-                                await VesktopNative.virtmic.startSystem(
+                                await TallytopNative.virtmic.startSystem(
                                     !v.excludeSources || isSpecialSource(v.excludeSources) ? [] : v.excludeSources
                                 );
                             } else {
-                                await VesktopNative.virtmic.start(v.includeSources);
+                                await TallytopNative.virtmic.start(v.includeSources);
                             }
                         }
 
@@ -358,7 +358,7 @@ function StreamSettingsUi({
     const qualitySettings = State.store.screenshareQuality!;
 
     const [thumb] = useAwaiter(
-        () => (skipPicker ? Promise.resolve(source.url) : VesktopNative.capturer.getLargeThumbnail(source.id)),
+        () => (skipPicker ? Promise.resolve(source.url) : TallytopNative.capturer.getLargeThumbnail(source.id)),
         {
             fallbackValue: source.url,
             deps: [source.id]
@@ -586,7 +586,7 @@ function AudioSourcePickerLinux({
     setIncludeSources: (s: AudioSources) => void;
     setExcludeSources: (s: AudioSources) => void;
 }) {
-    const [sources, _, loading] = useAwaiter(() => VesktopNative.virtmic.list(), {
+    const [sources, _, loading] = useAwaiter(() => TallytopNative.virtmic.list(), {
         fallbackValue: { ok: true, targets: [], hasPipewirePulse: true }
     });
 
@@ -700,7 +700,7 @@ function ModalComponent({
         audio: true,
         includeSources: "None"
     });
-    const qualitySettings = (useVesktopState().screenshareQuality ??= {
+    const qualitySettings = (useTallytopState().screenshareQuality ??= {
         resolution: "720",
         frameRate: "30"
     });

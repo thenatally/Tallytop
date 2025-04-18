@@ -1,5 +1,5 @@
 /*
- * Vesktop, a desktop app aiming to give you a snappier Discord Experience
+ * Tallytop, a desktop app aiming to give you a snappier Discord Experience
  * Copyright (c) 2023 Vendicated and Vencord contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -38,12 +38,12 @@ addPatch({
         }
 
         const cb = (w: string, c: string[]) => {
-            VesktopNative.spellcheck.offSpellcheckResult(cb);
+            TallytopNative.spellcheck.offSpellcheckResult(cb);
             word = w;
             corrections = c;
             openMenu();
         };
-        VesktopNative.spellcheck.onSpellcheckResult(cb);
+        TallytopNative.spellcheck.onSpellcheckResult(cb);
     }
 });
 
@@ -51,7 +51,7 @@ addContextMenuPatch("textarea-context", children => {
     const spellCheckEnabled = useStateFromStores([SpellCheckStore], () => SpellCheckStore.isEnabled());
     const hasCorrections = Boolean(word && corrections?.length);
 
-    const availableLanguages = useMemo(VesktopNative.spellcheck.getAvailableLanguages, []);
+    const availableLanguages = useMemo(TallytopNative.spellcheck.getAvailableLanguages, []);
 
     const settings = useSettings();
     const spellCheckLanguages = (settings.spellCheckLanguages ??= [...new Set(navigator.languages)]);
@@ -68,14 +68,14 @@ addContextMenuPatch("textarea-context", children => {
                         <Menu.MenuItem
                             id={"vcd-spellcheck-suggestion-" + c}
                             label={c}
-                            action={() => VesktopNative.spellcheck.replaceMisspelling(c)}
+                            action={() => TallytopNative.spellcheck.replaceMisspelling(c)}
                         />
                     ))}
                     <Menu.MenuSeparator />
                     <Menu.MenuItem
                         id="vcd-spellcheck-learn"
                         label={`Add ${word} to dictionary`}
-                        action={() => VesktopNative.spellcheck.addToDictionary(word)}
+                        action={() => TallytopNative.spellcheck.addToDictionary(word)}
                     />
                 </>
             )}

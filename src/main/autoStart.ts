@@ -1,5 +1,5 @@
 /*
- * Vesktop, a desktop app aiming to give you a snappier Discord Experience
+ * Tallytop, a desktop app aiming to give you a snappier Discord Experience
  * Copyright (c) 2023 Vendicated and Vencord contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -17,7 +17,7 @@ interface AutoStart {
 function makeAutoStartLinux(): AutoStart {
     const configDir = process.env.XDG_CONFIG_HOME || join(process.env.HOME!, ".config");
     const dir = join(configDir, "autostart");
-    const file = join(dir, "vesktop.desktop");
+    const file = join(dir, "tallytop.desktop");
 
     // IM STUPID
     const legacyName = join(dir, "vencord.desktop");
@@ -34,8 +34,8 @@ function makeAutoStartLinux(): AutoStart {
             const desktopFile = `
 [Desktop Entry]
 Type=Application
-Name=Vesktop
-Comment=Vesktop autostart script
+Name=Tallytop
+Comment=Tallytop autostart script
 Exec=${commandLine}
 StartupNotify=false
 Terminal=false

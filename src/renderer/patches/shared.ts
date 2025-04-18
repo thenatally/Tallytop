@@ -1,12 +1,12 @@
 /*
- * Vesktop, a desktop app aiming to give you a snappier Discord Experience
+ * Tallytop, a desktop app aiming to give you a snappier Discord Experience
  * Copyright (c) 2023 Vendicated and Vencord contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
 import { Patch } from "@vencord/types/utils/types";
 
-window.VesktopPatchGlobals = {};
+window.TallytopPatchGlobals = {};
 
 interface PatchData {
     patches: Omit<Patch, "plugin">[];
@@ -18,8 +18,8 @@ export function addPatch<P extends PatchData>(p: P) {
 
     for (const patch of patches) {
         // TODO: Update types
-        Vencord.Plugins.addPatch(patch, "Vesktop", "VesktopPatchGlobals");
+        Vencord.Plugins.addPatch(patch, "Tallytop", "TallytopPatchGlobals");
     }
 
-    Object.assign(VesktopPatchGlobals, globals);
+    Object.assign(TallytopPatchGlobals, globals);
 }

@@ -1,5 +1,5 @@
 /*
- * Vesktop, a desktop app aiming to give you a snappier Discord Experience
+ * Tallytop, a desktop app aiming to give you a snappier Discord Experience
  * Copyright (c) 2023 Vendicated and Vencord contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -43,14 +43,14 @@ function generateDescription(description: string, descriptionNode: Element) {
     }
 }
 
-const latestReleaseInformation = await fetch("https://api.github.com/repos/Vencord/Vesktop/releases/latest", {
+const latestReleaseInformation = await fetch("https://api.github.com/repos/Vencord/Tallytop/releases/latest", {
     headers: {
         Accept: "application/vnd.github+json",
         "X-Github-Api-Version": "2022-11-28"
     }
 }).then(res => res.json());
 
-const metaInfo = await fs.readFile("./meta/dev.vencord.Vesktop.metainfo.xml", "utf-8");
+const metaInfo = await fs.readFile("./meta/dev.vencord.Tallytop.metainfo.xml", "utf-8");
 
 const parser = new DOMParser().parseFromString(metaInfo, "text/xml");
 
@@ -90,4 +90,4 @@ const output = xmlFormat(new XMLSerializer().serializeToString(parser), {
     indentation: "  "
 });
 
-await fs.writeFile("./meta/dev.vencord.Vesktop.metainfo.xml", output, "utf-8");
+await fs.writeFile("./meta/dev.vencord.Tallytop.metainfo.xml", output, "utf-8");

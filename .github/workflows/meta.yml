@@ -7,7 +7,7 @@ on:
     workflow_dispatch:
 
 permissions:
-  contents: write
+    contents: write
 
 jobs:
     update:
@@ -33,9 +33,9 @@ jobs:
                   git config user.name "github-actions[bot]"
                   git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-                  gh release upload "${{ github.event.release.tag_name }}" meta/dev.vencord.Vesktop.metainfo.xml
+                  gh release upload "${{ github.event.release.tag_name }}" meta/dev.vencord.Tallytop.metainfo.xml
 
-                  git add meta/dev.vencord.Vesktop.metainfo.xml
+                  git add meta/dev.vencord.Tallytop.metainfo.xml
                   git commit -m "metainfo: add entry for ${{ github.event.release.tag_name }}"
                   git push
               env:

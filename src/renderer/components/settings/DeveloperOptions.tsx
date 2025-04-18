@@ -1,5 +1,5 @@
 /*
- * Vesktop, a desktop app aiming to give you a snappier Discord Experience
+ * Tallytop, a desktop app aiming to give you a snappier Discord Experience
  * Copyright (c) 2025 Vendicated and Vencord contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -28,7 +28,7 @@ function openDeveloperOptionsModal(settings: Settings) {
         <ModalRoot {...props} size={ModalSize.MEDIUM}>
             <ModalHeader>
                 <Text variant="heading-lg/semibold" style={{ flexGrow: 1 }}>
-                    Vesktop Developer Options
+                    Tallytop Developer Options
                 </Text>
                 <ModalCloseButton onClick={props.onClose} />
             </ModalHeader>
@@ -42,8 +42,8 @@ function openDeveloperOptionsModal(settings: Settings) {
                         Debugging
                     </Forms.FormTitle>
                     <div className="vcd-settings-button-grid">
-                        <Button onClick={() => VesktopNative.debug.launchGpu()}>Open chrome://gpu</Button>
-                        <Button onClick={() => VesktopNative.debug.launchWebrtcInternals()}>
+                        <Button onClick={() => TallytopNative.debug.launchGpu()}>Open chrome://gpu</Button>
+                        <Button onClick={() => TallytopNative.debug.launchWebrtcInternals()}>
                             Open chrome://webrtc-internals
                         </Button>
                     </div>
@@ -55,7 +55,7 @@ function openDeveloperOptionsModal(settings: Settings) {
 
 const VencordLocationPicker: SettingsComponent = ({ settings }) => {
     const forceUpdate = useForceUpdater();
-    const vencordDir = VesktopNative.fileManager.getVencordDir();
+    const vencordDir = TallytopNative.fileManager.getVencordDir();
 
     return (
         <>
@@ -66,7 +66,7 @@ const VencordLocationPicker: SettingsComponent = ({ settings }) => {
                         href="about:blank"
                         onClick={e => {
                             e.preventDefault();
-                            VesktopNative.fileManager.showItemInFolder(vencordDir!);
+                            TallytopNative.fileManager.showItemInFolder(vencordDir!);
                         }}
                     >
                         {vencordDir}
@@ -79,13 +79,13 @@ const VencordLocationPicker: SettingsComponent = ({ settings }) => {
                 <Button
                     size={Button.Sizes.SMALL}
                     onClick={async () => {
-                        const choice = await VesktopNative.fileManager.selectVencordDir();
+                        const choice = await TallytopNative.fileManager.selectVencordDir();
                         switch (choice) {
                             case "cancelled":
                                 break;
                             case "ok":
                                 Toasts.show({
-                                    message: "Vencord install changed. Fully restart Vesktop to apply.",
+                                    message: "Vencord install changed. Fully restart Tallytop to apply.",
                                     id: Toasts.genId(),
                                     type: Toasts.Type.SUCCESS
                                 });
@@ -108,7 +108,7 @@ const VencordLocationPicker: SettingsComponent = ({ settings }) => {
                     size={Button.Sizes.SMALL}
                     color={Button.Colors.RED}
                     onClick={async () => {
-                        await VesktopNative.fileManager.selectVencordDir(null);
+                        await TallytopNative.fileManager.selectVencordDir(null);
                         forceUpdate();
                     }}
                 >
