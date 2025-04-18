@@ -41,17 +41,19 @@ jobs:
                   pnpm electron-builder --${{ matrix.platform }} --publish always
               env:
                   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-            - name: Run Electron Builder
-              if: ${{ matrix.platform == 'mac' }}
-              run: |
-                  echo "$API_KEY" > apple.p8
-                  pnpm electron-builder --${{ matrix.platform }} --publish always
+            - name: Upload each file in dist/ to the release
+              shell: bash
               env:
-                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                CSC_LINK: ${{ secrets.APPLE_SIGNING_CERT }}
-                CSC_KEY_PASSWORD: ${{ secrets.APPLE_SIGNING_CERT_PASSWORD }}
-                API_KEY: ${{ secrets.APPLE_API_KEY }}
-                APPLE_API_KEY: apple.p8
-                APPLE_API_KEY_ID: ${{ secrets.APPLE_API_KEY_ID }}
-                APPLE_API_ISSUER: ${{ secrets.APPLE_API_ISSUER }}
+                  GH_TOKEN: ${{ github.token }}
+              run: |
+                  TAG_NAME=$(git describe --tags --abbrev=0)
+                    for file in dist/*; do
+                    if [ -f "$file" ]; then
+                        echo "Uploading $file to release $TAG_NAME..."
+                        gh release upload "$TAG_NAME" "$file" --clobber
+                    else
+                        echo "Skipping $file (not a file)"
+                    fi
+                    done
+
+        
