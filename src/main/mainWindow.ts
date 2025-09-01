@@ -94,7 +94,7 @@ function initTray(win: BrowserWindow) {
             click: createAboutWindow
         },
         {
-            label: "Repair Vencord",
+            label: "Repair Tallycord",
             async click() {
                 await downloadVencordFiles();
                 app.relaunch();
