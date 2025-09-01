@@ -6,6 +6,7 @@
             background: none;
             user-select: none;
             -webkit-app-region: drag;
+            overflow: hidden;
         }
 
         .wrapper {
@@ -19,6 +20,14 @@
             border: 1px solid var(--fg-semi-trans);
             background: var(--bg);
             position: relative;
+        }
+
+        .message {
+            top: 70%;
+            word-break: break-word;
+            padding: 0 16px;
+            position: absolute;
+            font-size: 14px;
         }
 
         p {

@@ -7,6 +7,7 @@
 import { app } from "electron";
 import { existsSync, mkdirSync, renameSync, rmSync, writeFileSync } from "fs";
 import { join } from "path";
+import { stripIndent } from "shared/utils/text";
 
 interface AutoStart {
     isEnabled(): boolean;
