@@ -33,7 +33,7 @@ addPatch({
                 {
                     // eslint-disable-next-line no-useless-escape
                     match: /\b\i\.window\.setDevtoolsCallbacks/g,
-                    replace: "VesktopNative.win.setDevtoolsCallbacks"
+                    replace: "TallytopNative.win.setDevtoolsCallbacks"
                 }
             ]
         }
