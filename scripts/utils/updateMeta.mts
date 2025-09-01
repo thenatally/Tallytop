@@ -50,7 +50,7 @@ const latestReleaseInformation = await fetch("https://api.github.com/repos/Venco
     }
 }).then(res => res.json());
 
-const metaInfo = await fs.readFile("./meta/dev.vencord.Tallytop.metainfo.xml", "utf-8");
+const metaInfo = await fs.readFile("./meta/dev.tally.Tallytop.metainfo.xml", "utf-8");
 
 const parser = new DOMParser().parseFromString(metaInfo, "text/xml");
 
@@ -90,4 +90,4 @@ const output = xmlFormat(new XMLSerializer().serializeToString(parser), {
     indentation: "  "
 });
 
-await fs.writeFile("./meta/dev.vencord.Tallytop.metainfo.xml", output, "utf-8");
+await fs.writeFile("./meta/dev.tally.Tallytop.metainfo.xml", output, "utf-8");
